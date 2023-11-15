@@ -4,7 +4,7 @@ import {HiCalendar, HiSearch} from "react-icons/hi"
 
 function Header() {
   return (
-    <div className='flex flex-col md:flex-row w-full md:justify-between border-2 border-gray-400 p-3 rounded-lg gap-2 gap-y-4'>
+    <div className='flex flex-col md:flex-row w-full md:justify-between border-2 border-gray-400 p-3 rounded-lg gap-2 gap-y-4 shadow-xl bg-gray-100 md:absolute md:top-[100%]'>
         <div className='flex items-center border-b-2 border-gray-300 md:border-r-2 md:border-b-0'>
             <MdLocationOn className="w-9 h-9 text-red-500" />
             <input type="text" placeholder='Where to go?' className='focus:outline-none'/>
