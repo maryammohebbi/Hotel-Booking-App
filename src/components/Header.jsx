@@ -1,7 +1,11 @@
 import React, { useRef, useState } from 'react'
 import {MdLocationOn} from "react-icons/md"
 import {HiCalendar, HiMinus, HiPlus, HiSearch} from "react-icons/hi"
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+import { DateRange } from 'react-date-range'
 import useOutsideClick from '../hooks/useOutsideClick'
+import { format } from 'date-fns';
 
 function Header() {
     const [destination, setDestination] = useState("")
@@ -11,6 +15,15 @@ function Header() {
         children: 0,
         room: 1
     })
+    const [date, setDate] = useState([
+        {
+            startDate: new Date(),
+            endDate: new Date(),
+            key: 'selection',
+        }
+    ])
+    const [openDate, setOpenDate] = useState(false)
+
     const handleOptions = (name, operation)=> {
         setOptions((prev)=>{
             return{
@@ -33,11 +46,19 @@ function Header() {
             className='focus:outline-none bg-transparent'/>
 
         </div>
-        <div className='flex items-center border-b-2 border-gray-200 md:border-r-2 md:border-b-0 pr-4 cursor-pointer'>
+        <div className='flex items-center border-b-2 border-gray-200 md:border-r-2 md:border-b-0 pr-4 cursor-pointer relative'>
             <HiCalendar className='w-8 h-8 text-violet-600'/>
-            <div className='text-sm'>
-                22/12/2023 to 22/1/2024
+            <div onClick={()=> setOpenDate(!openDate)} className='text-sm'>
+                {`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(date[0].endDate, "MM/dd/yyyy")}`}
             </div>
+            {openDate && 
+                <DateRange
+                    className='absolute top-[50px] -left-4 z-50'
+                    ranges={date} 
+                    onChange={(item)=> setDate([item.selection])} 
+                    minDate={new Date()} 
+                    moveRangeOnFirstSelection={true}
+                />}
 
         </div>
         <div  className='flex items-center border-b-2 border-gray-300 md:border-r-2 md:border-b-0 pr-4 relative'>
