@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import {MdLocationOn} from "react-icons/md"
 import {HiCalendar, HiMinus, HiPlus, HiSearch} from "react-icons/hi"
+import useOutsideClick from '../hooks/useOutsideClick'
 
 function Header() {
     const [destination, setDestination] = useState("")
@@ -40,11 +41,11 @@ function Header() {
 
         </div>
         <div  className='flex items-center border-b-2 border-gray-300 md:border-r-2 md:border-b-0 pr-4 relative'>
-            <div onClick={()=>setOpenOptions(!openOptions)} className='text-sm cursor-pointer'>
+            <div onClick={()=>setOpenOptions(!openOptions)} id='optionDropDown' className='text-sm cursor-pointer'>
                 {options.adult} adult &bull; {options.children} children &bull; {options.room} room
             </div>
             {
-                openOptions && <GuestOptionList options={options} handleOptions={handleOptions}/>
+                openOptions && <GuestOptionList options={options} setOpenOptions={setOpenOptions} handleOptions={handleOptions}/>
             }
         </div>
         <div>
@@ -58,10 +59,12 @@ function Header() {
 
 export default Header
 
-function GuestOptionList({options, handleOptions}){
+function GuestOptionList({options, handleOptions, setOpenOptions}){
+    const optionRef = useRef()
+    useOutsideClick(optionRef,"optionDropDown", ()=>setOpenOptions(false) )
    
     return(
-        <div className='absolute top-7 md:top-12 w-[220px] border-2 border-gray-400 rounded-md shadow-xl bg-white p-4 z-50'>
+        <div ref={optionRef} className='absolute top-7 md:top-12 w-[220px] border-2 border-gray-400 rounded-md shadow-xl bg-white p-4 z-50'>
             <OptionItem 
             type="adult"
             options={options}
