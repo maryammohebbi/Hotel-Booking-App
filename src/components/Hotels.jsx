@@ -13,7 +13,7 @@ function Hotels() {
             <h2 className='font-bold text-xl'>Search Result({hotels.length})</h2>
             {
                 hotels.map(item => (
-                    <Link key={item.id}>
+                    <Link to={`/hotels/${item.id}?lat=${item.latitude}&lng=${item.longitude}`} key={item.id}>
                         <div className='flex border-2 border-slate-500 rounded-lg shadow-xl w-full h-28' >
                             <img src={item.picture_url.url} alt={item.name} className='w-[35%]'/>
                             <div className='p-2 w-[65%] flex flex-col justify-center'>
