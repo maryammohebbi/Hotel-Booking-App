@@ -6,6 +6,8 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRange } from 'react-date-range'
 import useOutsideClick from '../hooks/useOutsideClick'
 import { format } from 'date-fns';
+import { createSearchParams, useNavigate } from 'react-router-dom';
+
 
 function Header() {
     const [destination, setDestination] = useState("")
@@ -23,6 +25,12 @@ function Header() {
         }
     ])
     const [openDate, setOpenDate] = useState(false)
+    const navigate = useNavigate()
+    const encodedParams = createSearchParams({
+        date: JSON.stringify(date),
+        destination,
+        options: JSON.stringify(options)
+    })
 
     const handleOptions = (name, operation)=> {
         setOptions((prev)=>{
@@ -30,9 +38,14 @@ function Header() {
                 ...prev,
                 [name]: operation === "inc" ? options[name] + 1 : options[name] - 1
             }
-        }
+        })
+    }
+    const handleSearch = ()=>{
+        navigate({
+            pathname: "/hotels",
+            search: encodedParams.toString()
+        })
 
-        )
     }
   return (
     <div className='flex flex-col md:flex-row w-full md:justify-between border-2 border-gray-400 p-3 rounded-lg gap-2 gap-y-4 shadow-xl bg-gray-100 md:absolute md:top-[90%]'>
@@ -70,7 +83,7 @@ function Header() {
             }
         </div>
         <div>
-            <button className='bg-violet-600 p-2 rounded-lg'>
+            <button onClick={handleSearch} className='bg-violet-600 p-2 rounded-lg'>
                 <HiSearch className='w-6 h-6 text-white'/>
             </button>
         </div>
