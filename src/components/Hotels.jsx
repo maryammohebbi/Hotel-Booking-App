@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
-import useFetch from '../hooks/useFetch'
+import { Link } from 'react-router-dom'
 import { useHotel } from '../context/HotelProvider'
 
 function Hotels() {
