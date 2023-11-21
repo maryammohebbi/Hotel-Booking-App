@@ -5,7 +5,8 @@ function Banner() {
   return (
     <div className='w-full relative mb-8'>
         <img src="../src/assets/b.jpg" alt="" className='w-full h-[30rem] object-cover'/>
-        <Header/>
+        <div className='md:absolute md:top-[90%]'><Header/></div>
+        
     </div>
   )
 }

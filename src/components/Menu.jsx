@@ -5,7 +5,7 @@ import { IoMdClose } from "react-icons/io"
 
 function Menu() {
   return (
-    <div className='sticky top-0 z-50 w-full bg-gray-100'>
+    <div className='sticky top-0 w-full bg-gray-100 z-[10000]'>
       <nav className='max-w-sm container mx-auto sm:max-w-lg md:max-w-2xl lg:max-w-5xl xl:max-w-7xl relative'>
           <BigScreenMenu/>
           <MobileMenu/>
@@ -30,7 +30,7 @@ function BigScreenMenu(){
 function MobileMenu(){
   const [isOpen, setIsOpen] = useState(false)
   return(
-    <div className='flex flex-col p-2 md:hidden bg-slate-100 w-full absolute'>
+    <div className='flex flex-col p-2 md:hidden bg-slate-100 w-full'>
         <div>
           <GiHamburgerMenu 
           onClick={()=>setIsOpen(true)}

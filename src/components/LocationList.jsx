@@ -1,11 +1,14 @@
 import React from 'react'
 import useFetch from '../hooks/useFetch'
+import Banner from './Banner'
 
 function LocationList() {
     const {data, isLoading} = useFetch("http://localhost:5000/hotels", "")
 
 
   return (
+    <div>
+    <Banner/>
     <div className='w-full my-10'>
         <h2 className='text-2xl font-bold my-4'>Nearby Locations</h2>
         {
@@ -32,6 +35,7 @@ function LocationList() {
                 </div>
             )
         }
+    </div>
     </div>
   )
 }
