@@ -67,7 +67,7 @@ function Header() {
             </div>
             {openDate && 
                 <DateRange
-                    className='absolute top-[50px] -left-4 z-50'
+                    className='absolute top-[50px] -left-4  z-[10000]'
                     ranges={date} 
                     onChange={(item)=> setDate([item.selection])} 
                     minDate={new Date()} 
@@ -99,7 +99,7 @@ function GuestOptionList({options, handleOptions, setOpenOptions}){
     useOutsideClick(optionRef,"optionDropDown", ()=>setOpenOptions(false) )
    
     return(
-        <div ref={optionRef} className='absolute top-7 md:top-12 w-[220px] border-2 border-gray-400 rounded-md shadow-xl bg-white p-4 z-50'>
+        <div ref={optionRef} className='absolute top-7 md:top-12 w-[220px] border-2 border-gray-400 rounded-md shadow-xl bg-white p-4  z-[10000]'>
             <OptionItem 
             type="adult"
             options={options}
