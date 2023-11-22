@@ -12,6 +12,8 @@ import BookmarkListContext from "./context/BookmarkListContext"
 import Bookmark from "./components/Bookmark"
 import SingleBookmark from "./components/SingleBookmark"
 import AddNewBookmark from "./components/AddNewBookmark"
+import Login from "./components/Login"
+import About from "./components/About"
 
 function App() {
 
@@ -23,6 +25,8 @@ function App() {
           <div className="max-w-sm container mx-auto sm:max-w-lg md:max-w-2xl lg:max-w-5xl xl:max-w-7xl relative">
             <Routes>
               <Route path="/" element={<LocationList/>}/>
+              <Route path="/about" element={<About/>}/>
+              <Route path="/login" element={<Login/>}/>
               <Route path="/hotels" element={<AppLayout/>}>
                 <Route index element={<Hotels/>}/>
                 <Route path=":id" element={<SingleHotel/>}/>

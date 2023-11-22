@@ -29,7 +29,7 @@ function AddNewBookmark() {
             setGeoCodingError(null)
             try {
                 const {data} = await axios.get(`${BASE_GEOLOCATION_URL}?latitude=${lat}&longitude=${lng}`)
-                console.log(data)
+                // console.log(data)
                 if(!data.countryCode) {
                     throw new Error("This location is not a city! Please click somewhere else.")
                 }
