@@ -3,12 +3,11 @@ import { useHotel } from '../context/HotelProvider'
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvent } from 'react-leaflet'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import useGeoLocation from '../hooks/useGeoLocation'
+import useUrlLocation from '../hooks/useUrlLocation'
 
 
 function Map({markerlocations}) {
-   const [searchParams, setSearchParams]  = useSearchParams()
-   const lat = searchParams.get("lat")
-   const lng = searchParams.get("lng")
+   const [lat, lng] = useUrlLocation()
 
 //    const {isLoading, hotels} = useHotel()
    const {isLoading: isLoadingPosition, position: geoLocationPosition, geoPosition} = useGeoLocation()
