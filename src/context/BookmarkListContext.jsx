@@ -57,8 +57,21 @@ function BookmarkListContext({children}) {
             setIsLoading(false)
         }
       }
+
+      async function deleteBookmark(id){
+        setIsLoading(true)
+        try {
+            await axios.delete(`${BASE_URL}/bookmarks/${id}`)
+            setBookmarks(prev => prev.filter(item => item.id !== id))
+        } catch (err) {
+            toast.error(err.message)           
+        }
+        finally{
+            setIsLoading(false)
+        }
+      }
   return (
-    <BookmarkContext.Provider value={{bookmarks, isLoading, currentBookmark, getBookmark, createBookmark}}>
+    <BookmarkContext.Provider value={{bookmarks, isLoading, currentBookmark, getBookmark, createBookmark, deleteBookmark}}>
         {children}
     </BookmarkContext.Provider>
   )

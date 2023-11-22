@@ -1334,15 +1334,6 @@
       "id": 1
     },
     {
-      "cityName": "Ferlach",
-      "country": "Austria",
-      "countryCode": "AT",
-      "latitude": "46.55795489220798",
-      "longitude": "14.392377200222779",
-      "host_location": "Ferlach Austria",
-      "id": 2
-    },
-    {
       "cityName": "Rome",
       "country": "Italy",
       "countryCode": "IT",
@@ -1350,15 +1341,6 @@
       "longitude": "12.380008140178541",
       "host_location": "Rome Italy",
       "id": 3
-    },
-    {
-      "cityName": "Melbourne",
-      "country": "Australia",
-      "countryCode": "AU",
-      "latitude": "-37.819591805123025",
-      "longitude": "144.96430428766374",
-      "host_location": "Melbourne Australia",
-      "id": 4
     }
   ]
 }
