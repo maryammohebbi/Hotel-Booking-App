@@ -26,7 +26,7 @@ function LocationList() {
                                     <div className='p-2'>
                                         <p className='font-bold'>{item.smart_location}</p>
                                         <p className='text-sm font-bold text-slate-800'>{item.name}</p>
-                                        <p className='text-center text-lg font-bold'>€&nbsp;{item.price}&nbsp;</p>
+                                        <p className='text-center text-lg font-bold'>€&nbsp;{item.price}&nbsp; - Per Night</p>
                                     </div>
                                 </div>
                             )

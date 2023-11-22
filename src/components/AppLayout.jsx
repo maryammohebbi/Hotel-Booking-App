@@ -2,8 +2,10 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Map from './Map'
 import Header from './Header'
+import { useHotel } from '../context/HotelProvider'
 
 function AppLayout() {
+  const { hotels } = useHotel()
   return (
     <div>
         <div className='my-12'>
@@ -13,7 +15,7 @@ function AppLayout() {
             <div className='h-80 overflow-y-scroll lg:w-[35%] lg:h-full'>
                 <Outlet/>
             </div>
-            <Map/>
+            <Map markerlocations={hotels}/>
         </div>
     </div>
   )

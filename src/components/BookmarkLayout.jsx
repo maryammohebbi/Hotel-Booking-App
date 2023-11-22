@@ -2,8 +2,10 @@ import React from 'react'
 import Header from './Header'
 import { Outlet } from 'react-router-dom'
 import Map from './Map'
+import { useBookmark } from '../context/BookmarkListContext'
 
 function BookmarkLayout() {
+  const {bookmarks} = useBookmark()
   return (
     <div>
         <div className='my-12'>
@@ -13,7 +15,7 @@ function BookmarkLayout() {
             <div className='h-80 overflow-y-scroll lg:w-[35%] lg:h-full'>
                 <Outlet/>
             </div>
-            <Map/>
+            <Map markerlocations={bookmarks}/>
         </div>
     </div>
   )
