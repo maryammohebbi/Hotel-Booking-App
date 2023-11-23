@@ -4,6 +4,7 @@ import { FaInstagram } from "react-icons/fa6"
 import { PiTelegramLogoDuotone } from "react-icons/pi"
 import { AiOutlineLinkedin } from "react-icons/ai"
 import { FiTwitter } from "react-icons/fi"
+import { User } from './Menu'
 
 function Footer() {
   return (
@@ -15,7 +16,7 @@ function Footer() {
               <NavLink to="/">Home</NavLink>
               <NavLink to="/bookmark">Bookmarks</NavLink>
               <NavLink to="/about">About</NavLink>
-              <NavLink to="/login">Login</NavLink>
+              <User/>
             </div>
           </div>
           <div className='w-[150px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, Quasi eos asperiores reprehenderit.</div>

@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { GiHamburgerMenu } from "react-icons/gi"
 import { IoMdClose } from "react-icons/io"
+import { useAuth } from '../context/AuthProvider'
+import { HiLogout } from 'react-icons/hi'
 
 function Menu() {
   return (
@@ -22,7 +24,7 @@ function BigScreenMenu(){
         <NavLink to="/">Home</NavLink>
         <NavLink to="/bookmark">Bookmarks</NavLink>
         <NavLink to="/about">About</NavLink>
-        <NavLink to="/login">Login</NavLink>
+        <User/>
     </div>
   )
 }
@@ -43,8 +45,34 @@ function MobileMenu(){
           <NavLink to="/">Home</NavLink>
           <NavLink to="/bookmark">Bookmarks</NavLink>
           <NavLink to="/about">About</NavLink>
-          <NavLink to="/login">Login</NavLink>
+          <User/>
         </ul>
     </div>
   )
 }
+
+
+export function User(){
+  const navigate = useNavigate()
+  const {user, isAuthenticated, logout} = useAuth()
+  const handleLogout = ()=>{
+      logout()
+      navigate("/")
+  }
+  return(
+      <div>
+          {
+              isAuthenticated ? (
+                  <div className='flex items-center'>
+                      <span>Hi, {user.name}!&nbsp;</span>
+                      <button>
+                        <HiLogout onClick={handleLogout} className='w-7 h-7 text-red-400'/>
+                      </button>
+                  </div>
+              ) : (
+                  <NavLink to="/login">Login</NavLink>
+              )
+          }
+      </div>
+    )
+  }
