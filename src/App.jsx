@@ -14,33 +14,36 @@ import SingleBookmark from "./components/SingleBookmark"
 import AddNewBookmark from "./components/AddNewBookmark"
 import Login from "./components/Login"
 import About from "./components/About"
+import AuthProvider from "./context/AuthProvider"
 
 function App() {
 
   return ( 
-      <BookmarkListContext>
-        <HotelProvider>
-          <Toaster/>
-          <Menu/>
-          <div className="max-w-sm container mx-auto sm:max-w-lg md:max-w-2xl lg:max-w-5xl xl:max-w-7xl relative">
-            <Routes>
-              <Route path="/" element={<LocationList/>}/>
-              <Route path="/about" element={<About/>}/>
-              <Route path="/login" element={<Login/>}/>
-              <Route path="/hotels" element={<AppLayout/>}>
-                <Route index element={<Hotels/>}/>
-                <Route path=":id" element={<SingleHotel/>}/>
-              </Route>
-              <Route path="/bookmark" element={<BookmarkLayout/>}>
-                <Route index element={<Bookmark/>}/>
-                <Route path=":id" element={<SingleBookmark/>}/>
-                <Route path="add" element={<AddNewBookmark/>}/>
-              </Route>
-            </Routes>
-          </div>
-          <Footer/>
-        </HotelProvider>
-      </BookmarkListContext>
+      <AuthProvider>
+        <BookmarkListContext>
+          <HotelProvider>
+            <Toaster/>
+            <Menu/>
+            <div className="max-w-sm container mx-auto sm:max-w-lg md:max-w-2xl lg:max-w-5xl xl:max-w-7xl relative">
+              <Routes>
+                <Route path="/" element={<LocationList/>}/>
+                <Route path="/about" element={<About/>}/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/hotels" element={<AppLayout/>}>
+                  <Route index element={<Hotels/>}/>
+                  <Route path=":id" element={<SingleHotel/>}/>
+                </Route>
+                <Route path="/bookmark" element={<BookmarkLayout/>}>
+                  <Route index element={<Bookmark/>}/>
+                  <Route path=":id" element={<SingleBookmark/>}/>
+                  <Route path="add" element={<AddNewBookmark/>}/>
+                </Route>
+              </Routes>
+            </div>
+            <Footer/>
+          </HotelProvider>
+        </BookmarkListContext>
+      </AuthProvider>
     
   )
 }
