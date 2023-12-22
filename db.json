@@ -202,83 +202,6 @@
       }
     },
     {
-      "id": "13531067",
-      "name": "AMSTERDAM, OUD-WEST",
-      "description": "Cozy private room with a double bed in Oud-West, Amsterdam. Typical Dutch local neighborhood quiet but with live. All sorts of facilities: supermarkets, stores, cafés 1 min walking. Great location: 5min to the center, 7min Leidseplein (restaurants, bars, shops, etc.), the marvelous famous FoodHallen (restaurants), Waterkant (bar), Kade West (café).",
-      "picture_url": {
-        "thumbnail": true,
-        "filename": "0cfd0182-b3b2-42cf-902f-24cb73a6c82e.jpg",
-        "format": "JPEG",
-        "width": 853,
-        "mimetype": "image/jpeg",
-        "id": "6351fdb41e5c30c168b2488e052d032f",
-        "height": 480,
-        "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/6351fdb41e5c30c168b2488e052d032f"
-      },
-      "xl_picture_url": "https://a0.muscache.com/im/pictures/0cfd0182-b3b2-42cf-902f-24cb73a6c82e.jpg?aki_policy=x_large",
-      "host_location": "Madrid, Community of Madrid, Spain",
-      "host_about": "Sociable, viajera y activa",
-      "street": "Amsterdam, North Holland, Netherlands",
-      "city": "Amsterdam",
-      "state": "North Holland",
-      "smart_location": "Amsterdam, Netherlands",
-      "country_code": "NL",
-      "country": "Netherlands",
-      "latitude": "52.36667871194905",
-      "longitude": "4.865594943841575",
-      "accommodates": 2,
-      "bathrooms": 1,
-      "bedrooms": 1,
-      "beds": 1,
-      "price": 100,
-      "guests_included": 1,
-      "extra_people": 0,
-      "minimum_nights": 2,
-      "maximum_nights": 1125,
-      "geolocation": {
-        "lon": 4.865594943841575,
-        "lat": 52.36667871194905
-      }
-    },
-    {
-      "id": "13465532",
-      "name": "Romantic house in easy Amsterdam, garden and cats",
-      "description": "Mijn ruimte is vlakbij Leidseplein, het Rijksmuseum, het Vondelpark en Paradiso. Je zult genieten van mijn plek vanwege de locatie, de tuin op het zuiden en de sfeer. Mijn ruimte is geschikt voor stellen en gezinnen (met kinderen). Je zult onze twee katten eten moeten  geven en af en toe moeten strelen.",
-      "picture_url": {
-        "thumbnail": true,
-        "filename": "fe92d866-4365-4267-b894-0f75511a6d41.jpg",
-        "format": "JPEG",
-        "width": 640,
-        "mimetype": "image/jpeg",
-        "id": "065e90eb568e7e4e34733eb9d6f3ec76",
-        "height": 480,
-        "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/065e90eb568e7e4e34733eb9d6f3ec76"
-      },
-      "xl_picture_url": "https://a0.muscache.com/im/pictures/fe92d866-4365-4267-b894-0f75511a6d41.jpg?aki_policy=x_large",
-      "host_location": "Amsterdam, North Holland, The Netherlands",
-      "street": "Oud-West, Amsterdam, Noord-Holland 1054 DM, Netherlands",
-      "city": "Amsterdam",
-      "state": "Noord-Holland",
-      "smart_location": "Amsterdam, Netherlands",
-      "country_code": "NL",
-      "country": "Netherlands",
-      "latitude": "52.36375757335638",
-      "longitude": "4.871988086041219",
-      "accommodates": 6,
-      "bathrooms": 1,
-      "bedrooms": 4,
-      "beds": 4,
-      "price": 350,
-      "guests_included": 1,
-      "extra_people": 0,
-      "minimum_nights": 5,
-      "maximum_nights": 7,
-      "geolocation": {
-        "lon": 4.871988086041219,
-        "lat": 52.36375757335638
-      }
-    },
-    {
       "id": "13760586",
       "name": "Fresh and bright in Baarsjes",
       "description": "2 bikes Wifi Cards for public transfer A lot of stores and restaurants around the corner",
@@ -410,15 +333,6 @@
       "longitude": "12.380008140178541",
       "host_location": "Rome Italy",
       "id": 3
-    },
-    {
-      "cityName": "Gold Coast",
-      "country": "Australia",
-      "countryCode": "AU",
-      "latitude": "-27.9905205399461",
-      "longitude": "153.37133924011144",
-      "host_location": "Gold Coast Australia",
-      "id": 4
     }
   ]
 }
