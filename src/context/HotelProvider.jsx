@@ -5,7 +5,7 @@ import axios from 'axios'
 import toast from 'react-hot-toast'
 
 const HotelContext = createContext()
-const BASE_URL = "http://localhost:5000"
+const BASE_URL = "https://hotelbooking-api-ynox.onrender.com"
 
 function HotelProvider({children}) {
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from './Header'
-import {motion} from "framer-motion"
 import {Typewriter} from "react-simple-typewriter"
 
 function Banner() {

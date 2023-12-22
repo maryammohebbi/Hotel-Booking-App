@@ -6,7 +6,7 @@ import axios from 'axios'
 
 
 const BookmarkContext = createContext()
-const BASE_URL = "http://localhost:5000"
+const BASE_URL = "https://hotelbooking-api-ynox.onrender.com"
 
 const initailState = {
     bookmarks: [],

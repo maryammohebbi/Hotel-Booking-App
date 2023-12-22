@@ -3,7 +3,7 @@ import useFetch from '../hooks/useFetch'
 import Banner from './Banner'
 
 function LocationList() {
-    const {data, isLoading} = useFetch("http://localhost:5000/hotels", "")
+    const {data, isLoading} = useFetch("https://hotelbooking-api-ynox.onrender.com/hotels", "")
 
 
   return (
