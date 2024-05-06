@@ -14,12 +14,14 @@ function Hotels() {
                 hotels.map(item => (
                     <Link to={`/hotels/${item.id}?lat=${item.latitude}&lng=${item.longitude}`} key={item.id}>
                         <div className={`flex border-2  rounded-lg shadow-xl w-full h-28 p-1 ${item.id === currentHotel?.id ? "border-green-500" : "border-slate-500"}`} >
+                            
                             <img src={item.thumbnail_url} alt={item.name} className='w-[35%] rounded-lg'/>
                             <div className='p-2 w-[65%] flex flex-col justify-center'>
                                 <p className='font-bold'>{item.smart_location}</p>
                                 <p className='text-sm font-bold text-slate-800'>{item.name}</p>
                                 <p className='text-center text-md font-bold'>€&nbsp;{item.price}&nbsp; - per night</p>
                             </div>
+                            
                         </div>
                     </Link>
                 ))
