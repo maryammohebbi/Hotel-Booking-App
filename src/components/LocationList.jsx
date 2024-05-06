@@ -22,7 +22,7 @@ function LocationList() {
                         data.map(item=>{
                             return(
                                 <div key={item.id} className='border-2 border-slate-500 rounded-lg shadow-xl'>
-                                    <img src={item.picture_url.url} alt={item.name} className='w-full h-80' />
+                                    <img src={item.xl_picture_url} alt={item.name} className='w-full h-80' />
                                     <div className='p-2'>
                                         <p className='font-bold'>{item.smart_location}</p>
                                         <p className='text-sm font-bold text-slate-800'>{item.name}</p>
